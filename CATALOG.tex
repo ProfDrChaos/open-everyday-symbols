@@ -1,0 +1,74 @@
+\documentclass{article}
+
+\usepackage{open-everyday-tikz-symbols}
+\usepackage[margin=.95in]{geometry}
+
+\begin{document}
+
+
+\title{The \emph{OPEN} Everyday tikz Symbols Library}
+\author{Pascal Bercher\\pascal.bercher@anu.edu.au}
+\date{\today}
+
+\maketitle
+
+This library is an OPEN and continuously extended library of everyday symbols. I call it \emph{open} because I urge EVERYBODY (i.e., you, dear reader :)), to contribute your own symbols to it. It's my vision that everybody who requires some symbols, e.g., when designing exercise sheets or lecture slides (or for whatever other purpose you might need them), you create multiple versions of it and integrate it into this library and documentation -- this way it keeps growing! Fun fact: those symbols that I contributed at first were all created using chatGPT. It's a lot of fun and fairly easy! (The hardest part was setting up the infra structure.) Please check the readme for further details on how to contribute.
+
+Please note that the very last section in this documentation gives some pointers to other libraries that contain ``everyday symbols'' (and that I am aware of). Do you know others that should be added here? Drop me an email!
+
+\smallskip
+Every command follows the structure:\\
+{\centering
+\texttt{\string\everydaySymbol[color]$\{$main-category$\}\{$sub-identifyer-number$\}$}}
+Here, \texttt{color} is optional, default is \texttt{black}. You can use all standard \LaTeX{} colors. If a symbol is too large (or small), simply scale it using
+\texttt{\string\scalebox$\{$factor$\}\{$your-symbol$\}$}.
+
+\smallskip
+Note that the document is ordered by category, like doors, houses, etc. Note however that every main category can have multiple sub categories (the sub-identifyer), where one sub category is by one author, meaning that for each main category you might find several further interpretations and variants of it. 
+
+\smallskip
+The rule for the sub-categories' name is ``descriptor--author--ID''. The ID is to enumerate over different symbols, whereas author allows multiple people to contribute their work without incurring a nameclash.
+
+\section{Doors}
+
+In this section, you find multiple variants of doors.
+
+
+\subsection{simple--pascal}
+
+Author: package author (Pascal; using chatGPT).
+
+\begin{itemize}
+  \foreach \i in {01,02,03,04,05} {
+    \item \texttt{\string\everydaySymbol\{door\}\{simple--pascal-\i\}} \dotfill\ 
+          \everydaySymbol{door}{simple--pascal-\i}
+  }
+\end{itemize}
+
+\pagebreak
+
+
+
+\section{Houses}
+
+In this section, you find multiple variants of houses.
+
+\subsection{modular--pascal}
+
+Author: package author (Pascal; using chatGPT). Note that these commands require keys to specify the exact graphic. (The code of this example might hence also be interesting to developers for further symbols.)
+
+\begin{itemize}
+  \item \texttt{\string\everydaySymbol\{house\}\{simple--pascal\}} \dotfill\ 
+        \everydaySymbol{house}{simple--pascal}
+
+  \item \texttt{\string\everydaySymbol[config=\{middleDoor,chimney\}]\{house\}\{simple--pascal\}} \dotfill\ 
+        \everydaySymbol[config={middleDoor,chimney}]{house}{simple--pascal}
+
+  \item \texttt{\string\everydaySymbol[config=\{rightDoor,leftWindow\}]\{house\}\{simple--pascal\}} \dotfill\ 
+        \everydaySymbol[config={rightDoor,leftWindow}]{house}{simple--pascal}
+
+  \item \texttt{\string\everydaySymbol[config=\{twoWindows,middleDoor\}]\{house\}\{simple--pascal\}} \dotfill\ 
+        \everydaySymbol[config={twoWindows,middleDoor}]{house}{simple--pascal}
+\end{itemize}
+
+\end{document}

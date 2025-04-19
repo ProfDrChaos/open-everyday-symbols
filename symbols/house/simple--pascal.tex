@@ -1,0 +1,52 @@
+% --- keys for house options ---
+\pgfkeys{
+  /everydaySymbol/house/.cd,
+  %config/.code = {\def\everydaySymbol@houseconfig{#1}},
+  config/.estore in=\everydaySymbol@houseconfig,
+  color/.code  = {\def\everydaySymbol@color{#1}},
+  default/.code={}
+}
+
+\expandafter\newcommand\csname everydaySymbol@house@simple--pascal\endcsname[1]{%
+  \tikz[baseline]{%
+    \providecommand\everydaySymbol@houseconfig{}% ← ensures defined
+    % base house
+    \fill[#1!20!white] (0,0) rectangle (0.8,0.5);
+    \fill[#1!40!white] (0,0.5) -- (0.4,0.8) -- (0.8,0.5) -- cycle;
+    \draw[#1, thick] (0,0) rectangle (0.8,0.5);
+    \draw[#1, thick] (0,0.5) -- (0.4,0.8) -- (0.8,0.5);
+
+    % right door
+    \IfSubStr{\everydaySymbol@houseconfig}{rightDoor}{%
+      \fill[#1] (0.37,0) rectangle (0.57,0.3);
+      \draw[white, thick] (0.42,0.15) circle (0.02);
+    }{}
+
+    % middle door
+    \IfSubStr{\everydaySymbol@houseconfig}{middleDoor}{%
+      \fill[#1] (0.30,0) rectangle (0.50,0.3);
+      \draw[white, thick] (0.35,0.15) circle (0.02);
+    }{}
+
+    % left window
+    \IfSubStr{\everydaySymbol@houseconfig}{leftWindow}{%
+      \draw[#1, thick] (0.1,0.25) rectangle (0.25,0.4);
+    }{}
+
+    % two windows
+    \IfSubStr{\everydaySymbol@houseconfig}{twoWindows}{%
+      \draw[#1, thick] (0.1,0.27) rectangle (0.25,0.42);
+      \draw[#1, thick] (0.175,0.27) -- (0.175,0.42);
+      \draw[#1, thick] (0.1,0.345) -- (0.25,0.345);
+      \draw[#1, thick] (0.55,0.27) rectangle (0.7,0.42);
+      \draw[#1, thick] (0.625,0.27) -- (0.625,0.42);
+      \draw[#1, thick] (0.55,0.345) -- (0.7,0.345);
+    }{}
+
+    % chimney
+    \IfSubStr{\everydaySymbol@houseconfig}{chimney}{%
+      \fill[#1] (0.55,0.7) rectangle (0.6,0.9);
+      \draw[#1, thick] (0.55,0.5) -- (0.55,0.7) -- (0.6,0.7) -- (0.6,0.9);
+    }{}
+  }%
+}

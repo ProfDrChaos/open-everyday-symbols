@@ -1,0 +1,34 @@
+\ProvidesPackage{open-everyday-tikz-symbols}
+\RequirePackage{tikz}
+% align all symbols so their bottom sits on the text baseline
+\tikzset{every picture/.append style={baseline=(current bounding box.south)}}
+\RequirePackage{etoolbox}
+\RequirePackage{xparse}
+\RequirePackage{xstring}
+\RequirePackage{etoolbox}
+\RequirePackage{xparse}
+\RequirePackage{pgfkeys}  % already used via TikZ, just making sure
+\RequirePackage{pgffor}
+
+\makeatletter
+
+\NewDocumentCommand{\everydaySymbol}{O{} m m}{%
+  \pgfkeys{/everydaySymbol/#2/.cd, default}%
+  \def\everydaySymbol@color{black}%
+  \IfStrEq{#1}{}{%
+    % nothing
+  }{%
+    \IfSubStr{#1}{=}{%
+      \pgfkeys{/everydaySymbol/#2/.cd, #1}%
+    }{%
+      \def\everydaySymbol@color{#1}%
+    }%
+  }%
+  \csname everydaySymbol@#2@#3\endcsname{\everydaySymbol@color}%
+}
+
+\input{symbols/door/simple--pascal}
+\input{symbols/house/simple--pascal}
+
+\makeatother
+\endinput
