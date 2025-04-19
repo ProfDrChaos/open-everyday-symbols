@@ -11,6 +11,8 @@
 
 \maketitle
 
+\setlength{\parindent}{0pt}
+
 This package is an \emph{open} and continuously extended list of ``everyday symbols'' (i.e., not of a mathematical or otherwise primarily technical nature). I call it open because I ask \emph{everybody} (i.e., also potentially you) to contribute your own symbols to it. I hope that enough people consider creating their own symbols, e.g., with the help of chatGPT, and contribute them to this package. (Note that creating such graphics isn't particularly hard or time-intense when getting assisted by generative AI such as chatGPT. It will take you a bit longer to create variants of the single symbol you need and to contribute your work to this package, but if enough people do this, we'll get a decent package at some point.)
 
 \medskip
@@ -55,19 +57,19 @@ Author: package author (Pascal; using chatGPT).
 
 \begin{itemize}
   \foreach \i in {01,02,03,04} {
-    \item \texttt{\string\everydaySymbol\{door\}\{simple--pascal-\i\}} \dotfill\ 
-          \everydaySymbol{door}{simple--pascal-\i}
+    \item \texttt{\string\everydaySymbol\{door\}\{floorplan--pascal-\i\}} \dotfill\ 
+          \everydaySymbol{door}{floorplan--pascal-\i}
   }
 
     % item 5 is shown separately as otherwise, strangely, the symbols are not perfectly aligned
-    \item \texttt{\string\everydaySymbol\{door\}\{simple--pascal-05\}} \dotfill\ 
-          \everydaySymbol{door}{simple--pascal-05}
+    \item \texttt{\string\everydaySymbol\{door\}\{floorplan--pascal-05\}} \dotfill\ 
+          \everydaySymbol{door}{floorplan--pascal-05}
 
-    \item \texttt{\string\everydaySymbol[color=red!66!yellow]\{door\}\{simple--pascal-05\}} \dotfill\ 
-          \everydaySymbol[color=red!66!yellow]{door}{simple--pascal-05}
+    \item \texttt{\string\everydaySymbol[color=red!66!yellow]\{door\}\{floorplan--pascal-05\}} \dotfill\ 
+          \everydaySymbol[color=red!66!yellow]{door}{floorplan--pascal-05}
 
-    \item \texttt{\string\everydaySymbol[blue]\{door\}\{simple--pascal-05\}} \dotfill\ 
-          \everydaySymbol[blue]{door}{simple--pascal-05}
+    \item \texttt{\string\everydaySymbol[blue]\{door\}\{floorplan--pascal-05\}} \dotfill\ 
+          \everydaySymbol[blue]{door}{floorplan--pascal-05}
 \end{itemize}
 
 
@@ -79,30 +81,32 @@ In this section, you find multiple variants of houses.
 
 \subsection{iconic--pascal}
 
-Author: package author (Pascal; using chatGPT). Note that these commands require keys to specify the exact graphic. (The code of this example might hence also be interesting to developers for further symbols.)
+Author: package author (Pascal; using chatGPT). 
+
+Note that here you have only one main command and use the config key to configure your graphic.
 
 \begin{itemize}
-  \item \texttt{\string\everydaySymbol\{house\}\{simple--pascal\}} \dotfill\ 
-        \everydaySymbol{house}{simple--pascal}
+  \item \texttt{\string\everydaySymbol\{house\}\{iconic--pascal\}} \dotfill\ 
+        \everydaySymbol{house}{iconic--pascal}
 
-  \item \texttt{\string\everydaySymbol[config=\{middleDoor,chimney\}]\{house\}\{simple--pascal\}} \dotfill\ 
-        \everydaySymbol[config={middleDoor,chimney}]{house}{simple--pascal}
+  \item \texttt{\string\everydaySymbol[config=\{middleDoor,chimney\}]\{house\}\{iconic--pascal\}} \dotfill\ 
+        \everydaySymbol[config={middleDoor,chimney}]{house}{iconic--pascal}
 
-  \item \texttt{\string\everydaySymbol[config=\{rightDoor,leftWindow\}]\{house\}\{simple--pascal\}} \dotfill\ 
-        \everydaySymbol[config={rightDoor,leftWindow}]{house}{simple--pascal}
+  \item \texttt{\string\everydaySymbol[config=\{rightDoor,leftWindow\}]\{house\}\{iconic--pascal\}} \dotfill\ 
+        \everydaySymbol[config={rightDoor,leftWindow}]{house}{iconic--pascal}
 
-  \item \texttt{\string\everydaySymbol[config=twoWindows,color=red]\{house\}\{simple--pascal\}} \dotfill\ 
-        \everydaySymbol[config=twoWindows,color=red]{house}{simple--pascal}
+  \item \texttt{\string\everydaySymbol[config=twoWindows,color=red]\{house\}\{iconic--pascal\}} \dotfill\ 
+        \everydaySymbol[config=twoWindows,color=red]{house}{iconic--pascal}
 
-  \item \texttt{\string\everydaySymbol[config=\{twoWindows,middleDoor\}]\{house\}\{simple--pascal\}} \dotfill\ 
-        \everydaySymbol[config={twoWindows,middleDoor}]{house}{simple--pascal}
+  \item \texttt{\string\everydaySymbol[config=\{twoWindows,middleDoor\}]\{house\}\{iconic--pascal\}} \dotfill\ 
+        \everydaySymbol[config={twoWindows,middleDoor}]{house}{iconic--pascal}
 
 \end{itemize}
 
 \section*{Version History}
 
 \begin{itemize}
-  \item Version 1.0: First version with just two categories: Door (simple--pascal) and House (simple--pascal)
+  \item Version 1.0: First version with just two categories: Door (floorplan--pascal) and House (floorplan--pascal)
 \end{itemize}
 
 
