@@ -5,33 +5,31 @@
 
 \begin{document}
 
-
 \title{The \emph{OPEN} Everyday tikz Symbols Library}
 \author{Pascal Bercher\\pascal.bercher@anu.edu.au}
 \date{\today}
 
 \maketitle
 
-This library is an OPEN and continuously extended library of everyday symbols. I call it \emph{open} because I urge EVERYBODY (i.e., you, dear reader :)), to contribute your own symbols to it. It's my vision that everybody who requires some symbols, e.g., when designing exercise sheets or lecture slides (or for whatever other purpose you might need them), you create multiple versions of it and integrate it into this library and documentation -- this way it keeps growing! Fun fact: those symbols that I contributed at first were all created using chatGPT. It's a lot of fun and fairly easy! (The hardest part was setting up the infra structure.) Please check the readme for further details on how to contribute.
-
-Please note that the very last section in this documentation gives some pointers to other libraries that contain ``everyday symbols'' (and that I am aware of). Do you know others that should be added here? Drop me an email!
+This library is an \emph{open} and continuously extended library of ``everyday symbols'' (i.e., not of a mathematical or otherwise primarily technical nature). I call it open because I ask \emph{everybody} (i.e., also potentially you), to contribute your own symbols to it. I hope that enough people consider creating their own symbols, e.g., with the help of chatGPT, and contribute them to this package. (Note that creating such graphics isn't particularly hard or time-intense when getting assisted by generative AI such as chatGPT. It will take you a bit longer to create variants of the single symbol you need and to contribute your work to this package, but if enough people do this, we'll get a decent package at some point.)
 
 \medskip
-Every command follows the structure:\\
-{\centering
-\texttt{\string\everydaySymbol[some-color]$\{$main-category$\}\{$sub-identifyer-number$\}$}}\\
+Every command follows the structure:
+\begin{center}
+  \texttt{\string\everydaySymbol[some-color]$\{$main-category$\}\{$sub-identifier-number$\}$}
+\end{center}
 Here, \texttt{some-color} is optional, default is black/white (all standard \LaTeX{} colors are possible). Some graphics allow further arguments for configuration (in which case ``some-color'' has to be replaced by ``color=some-color''). If a symbol is too large (or small), simply scale it up or down using
 \texttt{\string\scalebox$\{$factor$\}\{$your-symbol$\}$}.
 
 \medskip
-Note that the document is ordered by category, like doors, houses, etc. Note however that every main category can have multiple sub categories (the sub-identifyer), where one sub category is by one author, meaning that for each main category you might find several further interpretations and variants of it. 
+Note that the document is ordered by category, like doors, houses, etc. Note however that every main category can have multiple sub categories (the sub-identifier), where one sub category is by one author, meaning that for each main category you might find several further interpretations and variants of it. 
 
 \medskip
-The rule for the sub-categories' name is ``descriptor--author--ID''. The ID is to enumerate over different symbols, whereas author allows multiple people to contribute their work without incurring a nameclash.
+The rule for the sub-categories' name is ``descriptor--author--ID''. The ID is to enumerate over different symbols, whereas author allows multiple people to contribute their work without incurring a name clash.
 
 \subsection*{More symbols required?}
 
-You might be here because you require some symbol... Thus, two pieces of advice:
+You might be here because you require some (non-mathematical) symbol... Thus, two pieces of advice:
 
 \begin{itemize}
   \item Check out https://detexify.kirelabs.org/classify.html: it allows you to draw a symbol in the browser, and text recognition recommends \LaTeX{} commands and the packages in which they are found.
@@ -54,13 +52,22 @@ In this section, you find multiple variants of doors.
 Author: package author (Pascal; using chatGPT).
 
 \begin{itemize}
-  \foreach \i in {01,02,03,04,05} {
+  \foreach \i in {01,02,03,04} {
     \item \texttt{\string\everydaySymbol\{door\}\{simple--pascal-\i\}} \dotfill\ 
           \everydaySymbol{door}{simple--pascal-\i}
   }
+
+    % item 5 is shown separately as otherwise, strangely, the symbols are not perfectly aligned
+    \item \texttt{\string\everydaySymbol\{door\}\{simple--pascal-05\}} \dotfill\ 
+          \everydaySymbol{door}{simple--pascal-05}
+
+    \item \texttt{\string\everydaySymbol[color=red!66!yellow]\{door\}\{simple--pascal-05\}} \dotfill\ 
+          \everydaySymbol[color=red!66!yellow]{door}{simple--pascal-05}
+
+    \item \texttt{\string\everydaySymbol[blue]\{door\}\{simple--pascal-05\}} \dotfill\ 
+          \everydaySymbol[blue]{door}{simple--pascal-05}
 \end{itemize}
 
-%\pagebreak
 
 
 
@@ -82,8 +89,12 @@ Author: package author (Pascal; using chatGPT). Note that these commands require
   \item \texttt{\string\everydaySymbol[config=\{rightDoor,leftWindow\}]\{house\}\{simple--pascal\}} \dotfill\ 
         \everydaySymbol[config={rightDoor,leftWindow}]{house}{simple--pascal}
 
+  \item \texttt{\string\everydaySymbol[config=twoWindows,color=red]\{house\}\{simple--pascal\}} \dotfill\ 
+        \everydaySymbol[config=twoWindows,color=red]{house}{simple--pascal}
+
   \item \texttt{\string\everydaySymbol[config=\{twoWindows,middleDoor\}]\{house\}\{simple--pascal\}} \dotfill\ 
         \everydaySymbol[config={twoWindows,middleDoor}]{house}{simple--pascal}
+
 \end{itemize}
 
 \end{document}

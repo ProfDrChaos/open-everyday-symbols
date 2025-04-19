@@ -1,14 +1,10 @@
 \ProvidesPackage{open-everyday-tikz-symbols}
 \RequirePackage{tikz}
-% align all symbols so their bottom sits on the text baseline
+
+\RequirePackage{etoolbox} % used for conditionals
+\RequirePackage{xstring}  % used for the main command we provide
+
 \tikzset{every picture/.append style={baseline=(current bounding box.south)}}
-\RequirePackage{etoolbox}
-\RequirePackage{xparse}
-\RequirePackage{xstring}
-\RequirePackage{etoolbox}
-\RequirePackage{xparse}
-\RequirePackage{pgfkeys}  % already used via TikZ, just making sure
-\RequirePackage{pgffor}
 
 \makeatletter
 
