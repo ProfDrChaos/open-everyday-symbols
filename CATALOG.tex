@@ -16,18 +16,33 @@ This library is an OPEN and continuously extended library of everyday symbols. I
 
 Please note that the very last section in this documentation gives some pointers to other libraries that contain ``everyday symbols'' (and that I am aware of). Do you know others that should be added here? Drop me an email!
 
-\smallskip
+\medskip
 Every command follows the structure:\\
 {\centering
-\texttt{\string\everydaySymbol[color]$\{$main-category$\}\{$sub-identifyer-number$\}$}}
-Here, \texttt{color} is optional, default is \texttt{black}. You can use all standard \LaTeX{} colors. If a symbol is too large (or small), simply scale it using
+\texttt{\string\everydaySymbol[some-color]$\{$main-category$\}\{$sub-identifyer-number$\}$}}\\
+Here, \texttt{some-color} is optional, default is black/white (all standard \LaTeX{} colors are possible). Some graphics allow further arguments for configuration (in which case ``some-color'' has to be replaced by ``color=some-color''). If a symbol is too large (or small), simply scale it up or down using
 \texttt{\string\scalebox$\{$factor$\}\{$your-symbol$\}$}.
 
-\smallskip
+\medskip
 Note that the document is ordered by category, like doors, houses, etc. Note however that every main category can have multiple sub categories (the sub-identifyer), where one sub category is by one author, meaning that for each main category you might find several further interpretations and variants of it. 
 
-\smallskip
+\medskip
 The rule for the sub-categories' name is ``descriptor--author--ID''. The ID is to enumerate over different symbols, whereas author allows multiple people to contribute their work without incurring a nameclash.
+
+\subsection*{More symbols required?}
+
+You might be here because you require some symbol... Thus, two pieces of advice:
+
+\begin{itemize}
+  \item Check out https://detexify.kirelabs.org/classify.html: it allows you to draw a symbol in the browser, and text recognition recommends \LaTeX{} commands and the packages in which they are found.
+  \item Other than that, one might only need this amazing PDF:\\
+  https://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf. 
+  It lists out dozens (or hundreds?) of packages and their symbols, including their commands and symbols. Thus, either scroll through its almost 500 pages, or use full-text search, e.g., for ``dinosaur''.  
+\end{itemize}
+
+If you still don't find what you are after, please consider drawing variants of what you need yourself using chatGPT in tikz, and ``donate'' your work into this package so that it grows. :)
+
+\pagebreak
 
 \section{Doors}
 
@@ -45,7 +60,7 @@ Author: package author (Pascal; using chatGPT).
   }
 \end{itemize}
 
-\pagebreak
+%\pagebreak
 
 
 
