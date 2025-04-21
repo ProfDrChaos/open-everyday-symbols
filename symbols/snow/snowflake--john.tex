@@ -1,0 +1,34 @@
+\newif\if@everydaySymbol@snow@snowflake@defcolors
+\@everydaySymbol@snow@snowflake@defcolorsfalse
+\pgfkeys{
+  /everydaySymbol/snow/.cd,
+  color/.code  = {\def\everydaySymbol@color{#1}},
+  default/.code={},
+  colorful/.is choice,
+  colorful/.default=false,
+  colorful/true/.code = \@everydaySymbol@snow@snowflake@defcolorstrue,
+  colorful/false/.code = \@everydaySymbol@snow@snowflake@defcolorsfalse,
+}
+
+\expandafter\newcommand\csname everydaySymbol@snow@snowflake--john-01\endcsname[1]{%
+\resizebox{!}{1em}{%
+  \if@everydaySymbol@snow@snowflake@defcolors%
+  \raisebox{-2pt}{\tikz[scale=0.25]{
+  \foreach \angle in {0,60,...,300} {
+    \begin{scope}[rotate=\angle]
+      \draw[blue!80!green!90, draw opacity=0.8] (0,0) -- (0,1);
+      \draw[blue!80!green, draw opacity=0.6] (0.08,0.2) -- (0,0.4) -- (-0.08,0.2);
+      \draw[blue!90!green!80!purple, draw opacity=0.5] (0.22,0.8) -- (0,0.5) -- (-0.22,0.8);
+    \end{scope}
+  }}}\else%
+  \raisebox{-2pt}{\tikz[scale=0.25]{
+  \foreach \angle in {0,60,...,300} {
+    \begin{scope}[rotate=\angle]
+      \draw[#1, draw opacity=0.8] (0,0) -- (0,1);
+      \draw[#1, draw opacity=0.6] (0.08,0.2) -- (0,0.4) -- (-0.08,0.2);
+      \draw[#1, draw opacity=0.5] (0.22,0.8) -- (0,0.5) -- (-0.22,0.8);
+    \end{scope}
+  }}}\fi%
+}%
+  \@everydaySymbol@snow@snowflake@defcolorsfalse%
+}
