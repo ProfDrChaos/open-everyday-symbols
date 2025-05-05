@@ -5,7 +5,7 @@
 
 \begin{document}
 
-\title{The \emph{OPEN} Everyday Symbols Library\\[1ex]\large Version 1.0}
+\title{The \emph{OPEN} Everyday Symbols Library\\[1ex]\large Version 1.1}
 \author{Pascal Bercher\\pascal.bercher@anu.edu.au}
 \date{\today}
 
@@ -72,18 +72,6 @@ Author: package author (Pascal; using chatGPT).
           \everydaySymbol[blue]{door}{floorplan--pascal-05}
 \end{itemize}
 
-\section{Snow}
-
-In this section, you find anything related to snow. Note that the colors you specify is subject to opacity.
-
-\subsection{snowflake--john}
-\begin{itemize}
-  \item \verb|\everydaySymbol[colorful=true]{snow}{snowflake--john-01}| \dotfill\ \everydaySymbol[colorful=true]{snow}{snowflake--john-01}
-  \item \verb|\everydaySymbol[colorful=false]{snow}{snowflake--john-01}| \dotfill\ \everydaySymbol[colorful=false]{snow}{snowflake--john-01}
-  \item \verb|\everydaySymbol[blue]{snow}{snowflake--john-01}| \dotfill\ \everydaySymbol[blue]{snow}{snowflake--john-01}
-\end{itemize}
-
-
 
 
 \section{Houses}
@@ -93,6 +81,7 @@ In this section, you find multiple variants of houses.
 \subsection{iconic--pascal}
 
 Author: package author (Pascal; using chatGPT). 
+\medskip
 
 Note that here you have only one main command and use the config key to configure your graphic.
 
@@ -114,9 +103,35 @@ Note that here you have only one main command and use the config key to configur
 
 \end{itemize}
 
+
+\flushbottom
+\pagebreak\flushbottom
+\section{Snow}
+
+In this section, you find anything related to snow. 
+
+\subsection{snowflake--john}
+
+Author: johnzhou721
+\medskip
+
+As always, you can specify colors using color=\textit{some-color}, or by \emph{only} providing a color as (optional) argument. Using colorful=\textit{true} uses some default blue color.  With Using colorful=\textit{false} or not specifying this at all, draws the snowflake in black. Note that the colors you specify are subject to opacity.
+
+\begin{itemize}
+  \item \verb|\everydaySymbol[colorful=true]{snow}{snowflake--john-01}| \dotfill\ \everydaySymbol[colorful=true]{snow}{snowflake--john-01}
+  \item \verb|\everydaySymbol[colorful=false]{snow}{snowflake--john-01}| \dotfill\ \everydaySymbol[colorful=false]{snow}{snowflake--john-01}
+  \item \verb|\everydaySymbol{snow}{snowflake--john-01}| \dotfill\ \everydaySymbol{snow}{snowflake--john-01}
+  \item \verb|\everydaySymbol[color=blue]{snow}{snowflake--john-01}| \dotfill\ \everydaySymbol[color=blue]{snow}{snowflake--john-01}
+  \item \verb|\everydaySymbol[color=red]{snow}{snowflake--john-01}| \dotfill\ \everydaySymbol[color=red]{snow}{snowflake--john-01}
+  \item \verb|\everydaySymbol[purple]{snow}{snowflake--john-01}| \dotfill\ \everydaySymbol[purple]{snow}{snowflake--john-01}
+\end{itemize}
+
+
+
 \section*{Version History}
 
 \begin{itemize}
+  \item 2025/05/05, Version 1.1: One more category: Snow (snowflake-john-01)
   \item 2025/04/20, Version 1.0: First version with just two categories: Door (floorplan--pascal) and House (floorplan--pascal).
 \end{itemize}
 
