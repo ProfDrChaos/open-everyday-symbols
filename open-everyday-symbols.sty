@@ -4,7 +4,7 @@
 \RequirePackage{etoolbox} % used for conditionals
 \RequirePackage{xstring}  % used for the main command we provide
 
-\tikzset{every picture/.append style={baseline=(current bounding box.south)}}
+\newcommand{\oesym@tikz}[1][]{\tikz[baseline=(current bounding box.south),#1]}
 
 
 \NewDocumentCommand{\everydaySymbol}{O{} m m}{%
