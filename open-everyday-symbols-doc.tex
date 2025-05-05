@@ -32,7 +32,7 @@ Every command follows the structure:
 Here, \oarg{color-or-options} is optional. If no \verb+=+ is detected in the text of \meta{color-or-options}, the argument is treated as a color. The default color is black/white (all standard \LaTeX{} colors are possible). Otherwise, if there is an equal sign, \meta{color-or-options} is treated as options passed to the specific graphic you're using for further customization, for which available keys depend on the graphics used. If a symbol is too large (or small), simply scale it up or down using
 \cs{scalebox}\marg{factor}\marg{your-symbol}.
 
-Caveat: If you specify an option in the first optional argument, you \emph{must} do \verb+color=+ in front of the color, should you also want to specify a color. At least one usage of an option \emph{must} include an equal sign in order for the optional argument to get recognized as an option list, and once recognized as an option list, all color specification must be prefixed with \verb|color=|.
+\textbf{Caveat:} If you specify an option in the first optional argument, you \emph{must} do \verb+color=+ in front of the color, should you also want to specify a color. At least one usage of an option \emph{must} include an equal sign in order for the optional argument to get recognized as an option list, and once recognized as an option list, all color specification must be prefixed with \verb|color=|.
 
 Note that the document is ordered by category, like doors, houses, etc. Note however that every main category can have multiple sub categories (the sub-identifier), where one sub category is by one author, meaning that for each main category you might find several further interpretations and variants of it. 
 
@@ -40,16 +40,16 @@ The rule for the sub-categories' name is ``descriptor--author--ID''. ID is to en
 
 \subsection*{More symbols required?}
 
-You might be here because you require some (non-mathematical) symbol... Thus, two pieces of advice:
+You might be here because you require some (non-mathematical) symbol\dots{} Thus, two pieces of advice:
 
 \begin{itemize}
-  \item Check out \url{https://detexify.kirelabs.org/classify.html}: it allows you to draw a symbol in the browser, and text recognition recommends \LaTeX{} commands and the packages in which they are found.
+  \item Check out \url{https://detexify.kirelabs.org/classify.html}: it allows you to draw a symbol in the browser, and text recognition recommends \LaTeX{} commands and the packages in which they are found. This works better for mathematical and technical symbols.
   \item Other than that, one might only need this amazing PDF:
   \url{https://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf}. 
   It lists out dozens (or hundreds?) of packages and their symbols, including their commands and symbols. Thus, either scroll through its almost 500 pages, or use full-text search, e.g., for ``dinosaur''.  
 \end{itemize}
 
-If you still don't find what you are after, please consider drawing variants of what you need yourself using ChatGPT in Ti\textit{k}z, and ``donate'' your work into this package so that it grows. :)
+If you still don't find what you are after, please consider drawing variants of what you need yourself, possibly using ChatGPT for Ti\textit{k}z, and ``donate'' your work into this package so that it grows. :)
 
 Version history at the very end.
 
@@ -65,19 +65,16 @@ In this section, you find multiple variants of doors.
 Author: package author (Pascal; using ChatGPT).
 
 \begin{itemize}
-  \foreach \i in {01,02,03,04} {
-    \item \texttt{\string\everydaySymbol\{door\}\{floorplan--pascal-\i\}} \dotfill\
-          \everydaySymbol{door}{floorplan--pascal-\i}
-  }
+	\foreach \i in {01,02,03,04,05} {
+		% no verb should be needed because it's inside argument of \foreach
+		\item \texttt{\string\everydaySymbol\{door\}\{floorplan--pascal-\i\}} \dotfill\
+		      \everydaySymbol{door}{floorplan--pascal-\i}% need the percent sign so no extra space is inserted
+	}
 
-    % item 5 is shown separately as otherwise, strangely, the symbols are not perfectly aligned
-    \item \texttt{\string\everydaySymbol\{door\}\{floorplan--pascal-05\}} \dotfill\
-          \everydaySymbol{door}{floorplan--pascal-05}
-
-    \item \texttt{\string\everydaySymbol[color=red!66!yellow]\{door\}\{floorplan--pascal-05\}} \dotfill\
+    \item \verb|\everydaySymbol[color=red!66!yellow]{door}{floorplan--pascal-05}| \dotfill\
           \everydaySymbol[color=red!66!yellow]{door}{floorplan--pascal-05}
 
-    \item \texttt{\string\everydaySymbol[blue]\{door\}\{floorplan--pascal-05\}} \dotfill\
+    \item \verb|\everydaySymbol[blue]{door}{floorplan--pascal-05}| \dotfill\
           \everydaySymbol[blue]{door}{floorplan--pascal-05}
 \end{itemize}
 
