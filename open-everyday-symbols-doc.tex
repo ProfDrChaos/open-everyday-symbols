@@ -5,7 +5,7 @@
 
 \begin{document}
 
-\title{The \emph{OPEN} Everyday Symbols Library\\[1ex]\large Version 1.0}
+\title{The \emph{OPEN} Everyday Symbols Library\\[1ex]\large Version 1.1}
 \author{Pascal Bercher\\pascal.bercher@anu.edu.au}
 \date{\today}
 
@@ -18,7 +18,7 @@ This package is an \emph{open} and continuously extended list of ``everyday symb
 \medskip
 Every command follows the structure:
 \begin{center}
-  \texttt{\string\everydaySymbol[some-color]$\{$main-category$\}\{$sub-identifier-number$\}$}
+  \texttt{\string\everydaySymbol[some-color]$\{\textit{main-category}\}\{\textit{sub-identifier-number}\}$}
 \end{center}
 Here, \texttt{some-color} is optional, default is black/white (all standard \LaTeX{} colors are possible). Some graphics allow further arguments for configuration (in which case ``some-color'' has to be replaced by ``color=some-color''). If a symbol is too large (or small), simply scale it up or down using
 \texttt{\string\scalebox$\{$factor$\}\{$your-symbol$\}$}.
@@ -57,21 +57,20 @@ Author: package author (Pascal; using chatGPT).
 
 \begin{itemize}
   \foreach \i in {01,02,03,04} {
-    \item \texttt{\string\everydaySymbol\{door\}\{floorplan--pascal-\i\}} \dotfill\ 
+    \item \texttt{\string\everydaySymbol\{door\}\{floorplan--pascal-\i\}} \dotfill\
           \everydaySymbol{door}{floorplan--pascal-\i}
   }
 
     % item 5 is shown separately as otherwise, strangely, the symbols are not perfectly aligned
-    \item \texttt{\string\everydaySymbol\{door\}\{floorplan--pascal-05\}} \dotfill\ 
+    \item \texttt{\string\everydaySymbol\{door\}\{floorplan--pascal-05\}} \dotfill\
           \everydaySymbol{door}{floorplan--pascal-05}
 
-    \item \texttt{\string\everydaySymbol[color=red!66!yellow]\{door\}\{floorplan--pascal-05\}} \dotfill\ 
+    \item \texttt{\string\everydaySymbol[color=red!66!yellow]\{door\}\{floorplan--pascal-05\}} \dotfill\
           \everydaySymbol[color=red!66!yellow]{door}{floorplan--pascal-05}
 
-    \item \texttt{\string\everydaySymbol[blue]\{door\}\{floorplan--pascal-05\}} \dotfill\ 
+    \item \texttt{\string\everydaySymbol[blue]\{door\}\{floorplan--pascal-05\}} \dotfill\
           \everydaySymbol[blue]{door}{floorplan--pascal-05}
 \end{itemize}
-
 
 
 
@@ -82,30 +81,57 @@ In this section, you find multiple variants of houses.
 \subsection{iconic--pascal}
 
 Author: package author (Pascal; using chatGPT). 
+\medskip
 
 Note that here you have only one main command and use the config key to configure your graphic.
 
 \begin{itemize}
-  \item \texttt{\string\everydaySymbol\{house\}\{iconic--pascal\}} \dotfill\ 
+  \item \texttt{\string\everydaySymbol\{house\}\{iconic--pascal\}} \dotfill\
         \everydaySymbol{house}{iconic--pascal}
 
-  \item \texttt{\string\everydaySymbol[config=\{middleDoor,chimney\}]\{house\}\{iconic--pascal\}} \dotfill\ 
+  \item \texttt{\string\everydaySymbol[config=\{middleDoor,chimney\}]\{house\}\{iconic--pascal\}} \dotfill\
         \everydaySymbol[config={middleDoor,chimney}]{house}{iconic--pascal}
 
-  \item \texttt{\string\everydaySymbol[config=\{rightDoor,leftWindow\}]\{house\}\{iconic--pascal\}} \dotfill\ 
+  \item \texttt{\string\everydaySymbol[config=\{rightDoor,leftWindow\}]\{house\}\{iconic--pascal\}} \dotfill\
         \everydaySymbol[config={rightDoor,leftWindow}]{house}{iconic--pascal}
 
-  \item \texttt{\string\everydaySymbol[config=twoWindows,color=red]\{house\}\{iconic--pascal\}} \dotfill\ 
+  \item \texttt{\string\everydaySymbol[config=twoWindows,color=red]\{house\}\{iconic--pascal\}} \dotfill\
         \everydaySymbol[config=twoWindows,color=red]{house}{iconic--pascal}
 
-  \item \texttt{\string\everydaySymbol[config=\{twoWindows,middleDoor\}]\{house\}\{iconic--pascal\}} \dotfill\ 
+  \item \texttt{\string\everydaySymbol[config=\{twoWindows,middleDoor\}]\{house\}\{iconic--pascal\}} \dotfill\
         \everydaySymbol[config={twoWindows,middleDoor}]{house}{iconic--pascal}
 
 \end{itemize}
 
+
+\flushbottom
+\pagebreak\flushbottom
+\section{Snow}
+
+In this section, you find anything related to snow. 
+
+\subsection{snowflake--john}
+
+Author: johnzhou721
+\medskip
+
+As always, you can specify colors using color=\textit{some-color}, or by \emph{only} providing a color as (optional) argument. Using colorful=\textit{true} uses some default blue color.  With Using colorful=\textit{false} or not specifying this at all, draws the snowflake in black. Note that the colors you specify are subject to opacity.
+
+\begin{itemize}
+  \item \verb|\everydaySymbol[colorful=true]{snow}{snowflake--john-01}| \dotfill\ \everydaySymbol[colorful=true]{snow}{snowflake--john-01}
+  \item \verb|\everydaySymbol[colorful=false]{snow}{snowflake--john-01}| \dotfill\ \everydaySymbol[colorful=false]{snow}{snowflake--john-01}
+  \item \verb|\everydaySymbol{snow}{snowflake--john-01}| \dotfill\ \everydaySymbol{snow}{snowflake--john-01}
+  \item \verb|\everydaySymbol[color=blue]{snow}{snowflake--john-01}| \dotfill\ \everydaySymbol[color=blue]{snow}{snowflake--john-01}
+  \item \verb|\everydaySymbol[color=red]{snow}{snowflake--john-01}| \dotfill\ \everydaySymbol[color=red]{snow}{snowflake--john-01}
+  \item \verb|\everydaySymbol[purple]{snow}{snowflake--john-01}| \dotfill\ \everydaySymbol[purple]{snow}{snowflake--john-01}
+\end{itemize}
+
+
+
 \section*{Version History}
 
 \begin{itemize}
+  \item 2025/05/05, Version 1.1: One more category: Snow (snowflake-john-01)
   \item 2025/04/20, Version 1.0: First version with just two categories: Door (floorplan--pascal) and House (floorplan--pascal).
 \end{itemize}
 
