@@ -3,3 +3,5 @@
 *.fls
 *.log
 open-everyday-symbols.zip
+*.out
+*.synctex.gz
