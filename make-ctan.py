@@ -50,7 +50,7 @@ if readme_file.exists():
     (ctan / readme_file.name).write_text(readme_file.read_text(encoding="utf-8"), encoding="utf-8")
 
 # Create zip archive
-zip_path = shutil.make_archive("open-everyday-symbols", 'zip', root_dir=ctan)
+zip_path = shutil.make_archive("open-everyday-symbols", 'zip', root_dir=ctan.parent, base_dir=ctan.name)
 
 # Delete the directory
 shutil.rmtree(ctan)
