@@ -1,50 +1,59 @@
 \documentclass{article}
 
 \usepackage{open-everyday-symbols}
-\usepackage[margin=.95in]{geometry}
+\usepackage[margin=.9in]{geometry}
+\usepackage{parskip}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{xurl}
+
+\newcommand{\meta}[1]{$\langle$\textit{\textrm{#1}}$\rangle$}
+\newcommand{\marg}[1]{\texttt{\{\meta{#1}\}}}
+\newcommand{\oarg}[1]{\texttt{[\meta{#1}]}}
+\newcommand{\pard}[1]{\texttt{(\meta{#1})}}
+\newcommand{\cs}[1]{\texttt{\textbackslash#1}}
+
+\flushbottom
 
 \begin{document}
 
-\title{The \emph{OPEN} Everyday Symbols Library\\[1ex]\large Version 1.1}
+\title{The \emph{OPEN} Everyday Symbols Library\\[1ex]\large Version 1.1.0.1}
 \author{Pascal Bercher\\pascal.bercher@anu.edu.au}
 \date{\today}
 
 \maketitle
 
-\setlength{\parindent}{0pt}
+This package is an \emph{open} and continuously extended list of ``everyday symbols'' (i.e., not primarily of a mathematical or otherwise technical nature). I call it open because I ask \emph{everybody} to contribute their own symbols to it. I hope that enough people consider creating their own symbols and contribute them to this package. (Note that creating such graphics isn't particularly hard or time-intense when getting assisted by generative AI such as ChatGPT. And if enough people do this, we'll get a decent package at some point.) For further details for contributing, please read the \textsc{readme}.
 
-This package is an \emph{open} and continuously extended list of ``everyday symbols'' (i.e., not of a mathematical or otherwise primarily technical nature). I call it open because I ask \emph{everybody} (i.e., also potentially you) to contribute your own symbols to it. I hope that enough people consider creating their own symbols, e.g., with the help of chatGPT, and contribute them to this package. (Note that creating such graphics isn't particularly hard or time-intense when getting assisted by generative AI such as chatGPT. It will take you a bit longer to create variants of the single symbol you need and to contribute your work to this package, but if enough people do this, we'll get a decent package at some point.) For further details for contributing, please read the readme.
-
-\medskip
 Every command follows the structure:
 \begin{center}
-  \texttt{\string\everydaySymbol[some-color]$\{\textit{main-category}\}\{\textit{sub-identifier-number}\}$}
+  \cs{everydaySymbol}\oarg{color-or-options}\marg{main-category}\marg{sub-identifier-number}
 \end{center}
-Here, \texttt{some-color} is optional, default is black/white (all standard \LaTeX{} colors are possible). Some graphics allow further arguments for configuration (in which case ``some-color'' has to be replaced by ``color=some-color''). If a symbol is too large (or small), simply scale it up or down using
-\texttt{\string\scalebox$\{$factor$\}\{$your-symbol$\}$}.
+Here, \oarg{color-or-options} is optional. If no \verb+=+ is detected in the text of \meta{color-or-options}, the argument is treated as a color. The default color is black/white (all standard \LaTeX{} colors are possible). Otherwise, if there is an equal sign, \meta{color-or-options} is treated as options passed to the specific graphic you're using for further customization, for which available keys depend on the graphics used. If a symbol is too large (or small), simply scale it up or down using
+\cs{scalebox}\marg{factor}\marg{your-symbol}.
 
-\medskip
+\textbf{Caveat:} If you specify an option in the first optional argument, you \emph{must} do \verb+color=+ in front of the color, should you also want to specify a color. At least one usage of an option \emph{must} include an equal sign in order for the optional argument to get recognized as an option list, and once recognized as an option list, all color specification must be prefixed with \verb|color=|.
+
 Note that the document is ordered by category, like doors, houses, etc. Note however that every main category can have multiple sub categories (the sub-identifier), where one sub category is by one author, meaning that for each main category you might find several further interpretations and variants of it. 
 
-\medskip
-The rule for the sub-categories' name is ``descriptor--author--ID''. The ID is to enumerate over different symbols, whereas author allows multiple people to contribute their work without incurring a name clash.
+The rule for the sub-categories' name is ``descriptor--author--ID''. ID is to enumerate over different symbols, whereas the author field allows multiple people to contribute their work without incurring a name clash.
 
 \subsection*{More symbols required?}
 
-You might be here because you require some (non-mathematical) symbol... Thus, two pieces of advice:
+You might be here because you require some (non-mathematical) symbol\dots{} Thus, two pieces of advice:
 
 \begin{itemize}
-  \item Check out https://detexify.kirelabs.org/classify.html: it allows you to draw a symbol in the browser, and text recognition recommends \LaTeX{} commands and the packages in which they are found.
-  \item Other than that, one might only need this amazing PDF:\\
-  https://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf. 
-  It lists out dozens (or hundreds?) of packages and their symbols, including their commands and symbols. Thus, either scroll through its almost 500 pages, or use full-text search, e.g., for ``dinosaur''.  
+  \item Check out \url{https://detexify.kirelabs.org/classify.html}: it allows you to draw a symbol in the browser, and text recognition recommends \LaTeX{} commands and the packages in which they are found. This works better for mathematical and technical symbols.
+  \item Other than that, one might only need this amazing PDF:
+  \url{https://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf}. 
+  It lists out dozens (or hundreds?) of packages and their symbols, including their commands and symbols. Their 500 page documentation is organized in useful sections, and lists out all commands (so even full-text search works well).
 \end{itemize}
 
-If you still don't find what you are after, please consider drawing variants of what you need yourself using chatGPT in tikz, and ``donate'' your work into this package so that it grows. :)
+If you still don't find what you are after, please consider drawing variants of what you need yourself (possibly using ChatGPT) using Ti\textit{k}z, and ``donate'' your work into this package so that it grows. :)
 
 Version history at the very end.
 
-\pagebreak
+\clearpage
 
 \section{Doors}
 
@@ -53,22 +62,19 @@ In this section, you find multiple variants of doors.
 
 \subsection{floorplan--pascal}
 
-Author: package author (Pascal; using chatGPT).
+\textbf{Author:} package author (Pascal; using ChatGPT).
 
 \begin{itemize}
-  \foreach \i in {01,02,03,04} {
-    \item \texttt{\string\everydaySymbol\{door\}\{floorplan--pascal-\i\}} \dotfill\
-          \everydaySymbol{door}{floorplan--pascal-\i}
-  }
+	\foreach \i in {01,02,03,04,05} {
+		% no verb should be needed because it's inside argument of \foreach
+		\item \texttt{\string\everydaySymbol\{door\}\{floorplan--pascal-\i\}} \dotfill\
+		      \everydaySymbol{door}{floorplan--pascal-\i}% need the percent sign so no extra space is inserted
+	}
 
-    % item 5 is shown separately as otherwise, strangely, the symbols are not perfectly aligned
-    \item \texttt{\string\everydaySymbol\{door\}\{floorplan--pascal-05\}} \dotfill\
-          \everydaySymbol{door}{floorplan--pascal-05}
-
-    \item \texttt{\string\everydaySymbol[color=red!66!yellow]\{door\}\{floorplan--pascal-05\}} \dotfill\
+    \item \verb|\everydaySymbol[color=red!66!yellow]{door}{floorplan--pascal-05}| \dotfill\
           \everydaySymbol[color=red!66!yellow]{door}{floorplan--pascal-05}
 
-    \item \texttt{\string\everydaySymbol[blue]\{door\}\{floorplan--pascal-05\}} \dotfill\
+    \item \verb|\everydaySymbol[blue]{door}{floorplan--pascal-05}| \dotfill\
           \everydaySymbol[blue]{door}{floorplan--pascal-05}
 \end{itemize}
 
@@ -80,8 +86,7 @@ In this section, you find multiple variants of houses.
 
 \subsection{iconic--pascal}
 
-Author: package author (Pascal; using chatGPT). 
-\medskip
+\textbf{Author:} package author (Pascal; using ChatGPT).
 
 Note that here you have only one main command and use the config key to configure your graphic.
 
@@ -103,19 +108,17 @@ Note that here you have only one main command and use the config key to configur
 
 \end{itemize}
 
-
-\flushbottom
-\pagebreak\flushbottom
 \section{Snow}
 
 In this section, you find anything related to snow. 
 
 \subsection{snowflake--john}
 
-Author: johnzhou721
-\medskip
+\textbf{Author:} johnzhou721 (John; snowflake shape using ChatGPT, but significantly tweaked).
 
-As always, you can specify colors using color=\textit{some-color}, or by \emph{only} providing a color as (optional) argument. Using colorful=\textit{true} uses some default blue color. When using colorful=\textit{false} or not specifying this at all, it draws the snowflake in black. Note that the colors you specify are subject to opacity.
+As always, you can specify colors using \texttt{color=\meta{some-color}}, or by \emph{only} providing a color as (optional) argument. Using \texttt{colorful=true} uses some default blue and purple color, made by the designer.  With using \texttt{colorful=false} or not specifying this at all, draws the snowflake in black or the color specified. Note that the colors you specify are subject to opacity. The \texttt{colorful} switch overrides the colors you specify manually. In addition, note that you \emph{must} specify \texttt{=true} or \texttt{=false} on \texttt{colorful}, else \texttt{colorful} is parsed as a (non-existent) color.
+
+Also, unlike the symbols in other categories, symbols in this subcategory will automatically use the current font size, {\large like this (\everydaySymbol[color=blue]{snow}{snowflake--john-01})} {\tiny as opposed to this (\everydaySymbol[color=blue]{snow}{snowflake--john-01})} (notice the size of the flakes). In comparison, {\tiny this symbol (\everydaySymbol[blue]{door}{floorplan--pascal-05}) is not scaled down according to the font size}.
 
 \begin{itemize}
   \item \verb|\everydaySymbol[colorful=true]{snow}{snowflake--john-01}| \dotfill\ \everydaySymbol[colorful=true]{snow}{snowflake--john-01}
@@ -124,18 +127,49 @@ As always, you can specify colors using color=\textit{some-color}, or by \emph{o
   \item \verb|\everydaySymbol[color=blue]{snow}{snowflake--john-01}| \dotfill\ \everydaySymbol[color=blue]{snow}{snowflake--john-01}
   \item \verb|\everydaySymbol[color=red]{snow}{snowflake--john-01}| \dotfill\ \everydaySymbol[color=red]{snow}{snowflake--john-01}
   \item \verb|\everydaySymbol[purple]{snow}{snowflake--john-01}| \dotfill\ \everydaySymbol[purple]{snow}{snowflake--john-01}
+  \item \verb|\everydaySymbol[colorful=true,color=yellow]{snow}{snowflake--john-01}| \dotfill\ \everydaySymbol[colorful=true,color=yellow]{snow}{snowflake--john-01}
 \end{itemize}
 
 
 
 \section*{Version History}
 
+\subsection*{Versions}
+
 \begin{itemize}
-  \item 2025/05/05, Version 1.1: One more category: Snow (snowflake-john-01)
-  \item 2025/04/20, Version 1.0: First version with just two categories: Door (floorplan--pascal) and House (floorplan--pascal).
+    %\setlength{\itemsep}{0pt}
+  \setlength{\parskip}{3pt}
+  %\setlength{\parsep}{0pt}
+  \item 2025/05/06, Version 1.1.0.1: \hfill by johnzhou721 (John)
+  \begin{itemize}
+      \item Tikz options will no longer leak to other tikzpictures outside of the ones provided by this package (caught by @cfr42).
+      \item snowflake--john-01 now uses ex instead of em for resizing to the current font size.
+      \item Documentation improved at various places.
+      \item Explanation on version numbers/pattern added (by Pascal).
+  \end{itemize}
+  \item 2025/05/05, Version 1.1: \hfill by johnzhou721 (John)
+  \begin{itemize}
+      \item One more category: Snow (snowflake--john)
+      \item Removed makeatletter in sty file (caught by @cfr42).
+  \end{itemize}
+  \item 2025/04/20, Version 1.0: \hfill by Pascal (package author)
+  \begin{itemize}
+      \item First version with just two categories: Door (floorplan--pascal) and House (iconic--pascal).
+  \end{itemize}
 \end{itemize}
 
+Minor improvements by the package author here and there (usually part of accepting pull requests) are not explicitly mentioned as ``authorship''.
 
+\subsection*{Explanations on Version Numbers}
 
+Versions follow the naming convention \emph{x.y.z.k}, where:
+\begin{itemize}
+  \setlength{\parskip}{3pt}
+  \item \emph{x} is the main version. It's increased for major changes in the functionality, possibly affecting all commands.
+  \item \emph{y} is increased whenever a major category (like ``Doors'') is being added. If multiple main categories are added at once, the number still only increases once.
+  \item \emph{z} is increased whenever a subcategory (like ``floorplan'') is added. If multiple subcategories are added at once, the number still only increases once. 
+  \item \emph{k} This is for any minor improvement not reflected by any of the above, e.g., any sort of refactoring or improvement that's not ``major'' enough (e.g., if no new functionality is added or downwards-compatibility is maintained). 
+  \item An increase of a number more to left sets all other numbers back to zero. E.g. adding a new main category after version 1.1.3.1 would create version 1.2.
+\end{itemize}
 
 \end{document}
