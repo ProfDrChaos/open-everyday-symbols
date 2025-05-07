@@ -49,7 +49,7 @@ You might be here because you require some (non-mathematical) symbol\dots{} Thus
   It lists out dozens (or hundreds?) of packages and their symbols, including their commands and symbols. Their 500 page documentation is organized in useful sections, and lists out all commands (so even full-text search works well).
 \end{itemize}
 
-If you still don't find what you are after, please consider drawing variants of what you need yourself, possibly using ChatGPT for Ti\textit{k}z, and ``donate'' your work into this package so that it grows. :)
+If you still don't find what you are after, please consider drawing variants of what you need yourself (possibly using ChatGPT) using Ti\textit{k}z, and ``donate'' your work into this package so that it grows. :)
 
 Version history at the very end.
 
@@ -62,7 +62,7 @@ In this section, you find multiple variants of doors.
 
 \subsection{floorplan--pascal}
 
-Author: package author (Pascal; using ChatGPT).
+\textbf{Author:} package author (Pascal; using ChatGPT).
 
 \begin{itemize}
 	\foreach \i in {01,02,03,04,05} {
@@ -86,7 +86,7 @@ In this section, you find multiple variants of houses.
 
 \subsection{iconic--pascal}
 
-Author: package author (Pascal; using ChatGPT).
+\textbf{Author:} package author (Pascal; using ChatGPT).
 
 Note that here you have only one main command and use the config key to configure your graphic.
 
@@ -114,7 +114,7 @@ In this section, you find anything related to snow.
 
 \subsection{snowflake--john}
 
-Author: johnzhou721 (John; snowflake shape using ChatGPT, but significantly tweaked).
+\textbf{Author:} johnzhou721 (John; snowflake shape using ChatGPT, but significantly tweaked).
 
 As always, you can specify colors using \texttt{color=\meta{some-color}}, or by \emph{only} providing a color as (optional) argument. Using \texttt{colorful=true} uses some default blue and purple color, made by the designer.  With using \texttt{colorful=false} or not specifying this at all, draws the snowflake in black or the color specified. Note that the colors you specify are subject to opacity. The \texttt{colorful} switch overrides the colors you specify manually. In addition, note that you \emph{must} specify \texttt{=true} or \texttt{=false} on \texttt{colorful}, else \texttt{colorful} is parsed as a (non-existent) color.
 
@@ -137,20 +137,34 @@ Also, unlike the symbols in other categories, symbols in this subcategory will a
 \subsection*{Versions}
 
 \begin{itemize}
-  \item 2025/05/06, Version 1.1.0.1:
+    %\setlength{\itemsep}{0pt}
+  \setlength{\parskip}{3pt}
+  %\setlength{\parsep}{0pt}
+  \item 2025/05/06, Version 1.1.0.1: \hfill by johnzhou721 (John)
   \begin{itemize}
+      \item Tikz options will no longer leak to other tikzpictures outside of the ones provided by this package (caught by @cfr42).
+      \item snowflake--john-01 now uses ex instead of em for resizing to the current font size.
       \item Documentation improved at various places.
-      \item Explanation on version numbers/pattern added.
-      \item Commands of sty file improved.
+      \item Explanation on version numbers/pattern added (by Pascal).
   \end{itemize}
-  \item 2025/05/05, Version 1.1: One more category: Snow (snowflake--john-01)
-  \item 2025/04/20, Version 1.0: First version with just two categories: Door (floorplan--pascal) and House (iconic--pascal).
+  \item 2025/05/05, Version 1.1: \hfill by johnzhou721 (John)
+  \begin{itemize}
+      \item One more category: Snow (snowflake--john)
+      \item Removed makeatletter in sty file (caught by @cfr42).
+  \end{itemize}
+  \item 2025/04/20, Version 1.0: \hfill by Pascal (package author)
+  \begin{itemize}
+      \item First version with just two categories: Door (floorplan--pascal) and House (iconic--pascal).
+  \end{itemize}
 \end{itemize}
+
+Minor improvements by the package author here and there (usually part of accepting pull requests) are not explicitly mentioned as ``authorship''.
 
 \subsection*{Explanations on Version Numbers}
 
 Versions follow the naming convention \emph{x.y.z.k}, where:
 \begin{itemize}
+  \setlength{\parskip}{3pt}
   \item \emph{x} is the main version. It's increased for major changes in the functionality, possibly affecting all commands.
   \item \emph{y} is increased whenever a major category (like ``Doors'') is being added. If multiple main categories are added at once, the number still only increases once.
   \item \emph{z} is increased whenever a subcategory (like ``floorplan'') is added. If multiple subcategories are added at once, the number still only increases once. 
